@@ -6,8 +6,8 @@ const stylelint = require("stylelint");
 
 gulp.task("css", () => {
 	const plugins = [
-		cssnext(),
-		stylelint()
+		stylelint(),
+		cssnext()
 	];
 	gulp.src("src/style/**/*.css")
 		.pipe(postcss(plugins))
