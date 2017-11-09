@@ -13,7 +13,12 @@
 	"license": "BSD-3-Clause",
 	"devDependencies": {
 		"gulp": "^3.9.1",
+		"gulp-nunjucks": "^3.0.0",
 		"gulp-postcss": "^7.0.0",
+		"gulp-rename": "^1.2.2",
+		"marked": "^0.3.6",
+		"nunjucks": "^3.0.1",
+		"nunjucks-markdown": "^2.0.1",
 		"postcss-cssnext": "^3.0.2",
 		"stylelint": "^8.2.0",
 		"stylelint-config-standard": "^17.0.0"
