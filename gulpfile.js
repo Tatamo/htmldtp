@@ -9,12 +9,14 @@ const postcss = require("gulp-postcss");
 const cssnext = require("postcss-cssnext");
 const stylelint = require("stylelint");
 const browsersync = require("browser-sync").create();
-
-const nm_env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src"));
-nunjucks_markdown.register(nm_env, marked);
+const plumber = require("gulp-plumber");
 
 gulp.task("nunjucks", () => {
-	return gulp.src(["src/**/*.@(njk|html)", "!src/**/_*.@(njk|html)"])
+	const nm_env = new nunjucks.Environment(new nunjucks.FileSystemLoader("src"));
+	nunjucks_markdown.register(nm_env, marked);
+
+	return gulp.src(["src/**/*.@(njk|html)","!src/**/_*.@(njk|html)"])
+		.pipe(plumber())
 		.pipe(gulp_nunjucks.compile("", {env: nm_env}))
 		.pipe(rename({extname: ".html"}))
 		.pipe(gulp.dest("dist/"))
@@ -22,9 +24,8 @@ gulp.task("nunjucks", () => {
 });
 
 gulp.task("watch-nunjucks", ["nunjucks"], () => {
-	gulp.watch(["src/**/*.@(njk|html)", "!src/**/_*.@(njk|html)"], ["nunjucks"]);
+	gulp.watch(["src/**/*.@(njk|html)"], ["nunjucks"]);
 });
-
 
 gulp.task("postcss", () => {
 	const plugins = [
@@ -32,13 +33,14 @@ gulp.task("postcss", () => {
 		cssnext()
 	];
 	gulp.src("src/style/**/*.css")
+		.pipe(plumber())
 		.pipe(postcss(plugins))
 		.pipe(gulp.dest("dist/style"))
 		.pipe(browsersync.stream());
 });
 
 gulp.task("watch-postcss", ["postcss"], () => {
-	gulp.watch("src/style/**/*.css", ["css"]);
+	gulp.watch("src/style/**/*.css", ["postcss"]);
 });
 
 gulp.task("browser-sync", () => {

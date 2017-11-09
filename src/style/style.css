@@ -1,0 +1,15 @@
+@page {
+  size: A4;
+  margin: 20mm;
+
+  /* noinspection Stylelint */
+  @bottom-left-corner {
+    content: "";
+    background-color: #000;
+  }
+}
+
+section {
+  break-before: page;
+  break-after: page;
+}
