@@ -43,11 +43,20 @@ gulp.task("watch-postcss", ["postcss"], () => {
 	gulp.watch("src/style/**/*.css", ["postcss"]);
 });
 
+gulp.task("static", ()=>{
+	gulp.src("static/**/*")
+		.pipe(gulp.dest("dist/"));
+});
+
+gulp.task("watch-static", ["static"], ()=>{
+	gulp.watch("static/**/*", ["static"]);
+});
+
 gulp.task("browser-sync", () => {
 	browsersync.init({server: {baseDir: "./dist"}});
 });
 
-gulp.task("default", ["nunjucks", "postcss"]);
-gulp.task("watch", ["watch-nunjucks", "watch-postcss"]);
+gulp.task("default", ["nunjucks", "postcss", "static"]);
+gulp.task("watch", ["watch-nunjucks", "watch-postcss", "watch-static"]);
 gulp.task("serve", ["browser-sync", "watch"]);
 

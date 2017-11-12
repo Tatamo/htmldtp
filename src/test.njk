@@ -1,13 +1,20 @@
-{% extends "template/base.njk" %}
+{% extends "template/_base.njk" %}
 {% set title = "report" %}
 {% set author = "the author name" %}
 {% set date = "2017/12/01" %}
 {% block content %}
-<section>
-    <p>section 1</p>
-</section>
-<section>
-    <p>section 2</p>
-</section>
-<p>abc</p>
+    <section>
+        <p>section 1</p>
+    </section>
+    <section>
+        <p>section 2</p>
+    </section>
+    <p>abc</p>
+    {% markdown %}
+    ```js
+    for(let i=0; i<10; i++) {
+        console.log(i);
+    }
+    ```
+    {% endmarkdown %}
 {% endblock %}
