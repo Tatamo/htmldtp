@@ -2,6 +2,10 @@
   size: A4;
   margin: 20mm;
 
+  @bottom-center {
+    content: counter(page);
+  }
+
   /* noinspection Stylelint */
   @bottom-left-corner {
     content: "";
