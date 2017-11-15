@@ -6,7 +6,6 @@
     content: counter(page);
   }
 
-  /* noinspection Stylelint */
   @bottom-left-corner {
     content: "";
     background-color: #000;

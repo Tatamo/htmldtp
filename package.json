@@ -27,6 +27,9 @@
 	},
 	"stylelint": {
 		"extends": "stylelint-config-standard",
-		"ignoreFiles": "static/highlight/**/*.css"
+		"ignoreFiles": "static/highlight/**/*.css",
+		"rules": {
+			"at-rule-no-unknown": null
+		}
 	}
 }
