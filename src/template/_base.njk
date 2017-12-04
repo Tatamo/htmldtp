@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="{{ stylepath | default("style/style.css") }}">
     {% include "template/_highlightjs.njk" %}
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -19,8 +19,8 @@
 {% block title %}
     <header>
         <h1 class="title">{{ title }}</h1> {% if author %}
-        <div class="author">{{ author }}</div>{% endif %}{% if date %}
-        <div class="date">{{ date }}</div>{% endif %}
+            <div class="author">{{ author }}</div>{% endif %}{% if date %}
+            <div class="date">{{ date }}</div>{% endif %}
     </header>
 {% endblock %}
 {% block content %}

@@ -16,3 +16,22 @@ section {
   break-before: page;
   break-after: page;
 }
+
+figcaption {
+  counter-increment: fig;
+}
+
+figcaption::before {
+  content: "図" counter(fig) ". ";
+}
+
+/*
+// Chrome web extensionではうまく動作しない
+a.figref::after {
+  content: "図" target-counter(attr(href), fig);
+}
+*/
+
+img {
+  max-width: 100%;
+}
