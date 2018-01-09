@@ -12,18 +12,18 @@
 	"author": "Tatamo",
 	"license": "BSD-3-Clause",
 	"devDependencies": {
-		"browser-sync": "^2.18.13",
+		"browser-sync": "^2.23.3",
 		"gulp": "^3.9.1",
-		"gulp-nunjucks": "^3.0.0",
-		"gulp-plumber": "^1.1.0",
-		"gulp-postcss": "^7.0.0",
+		"gulp-nunjucks": "^3.1.1",
+		"gulp-plumber": "^1.2.0",
+		"gulp-postcss": "^7.0.1",
 		"gulp-rename": "^1.2.2",
-		"marked": "^0.3.6",
+		"marked": "^0.3.12",
 		"nunjucks": "^3.0.1",
 		"nunjucks-markdown": "^2.0.1",
 		"postcss-cssnext": "^3.0.2",
-		"stylelint": "^8.2.0",
-		"stylelint-config-standard": "^17.0.0"
+		"stylelint": "^8.4.0",
+		"stylelint-config-standard": "^18.0.0"
 	},
 	"stylelint": {
 		"extends": "stylelint-config-standard",
