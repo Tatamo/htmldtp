@@ -5,17 +5,18 @@
   @bottom-center {
     content: counter(page);
   }
-
-  @bottom-left-corner {
-    content: "";
-    background-color: #000;
-  }
 }
 
+body {
+  font-size: 12pt;
+}
+
+/*
 section {
   break-before: page;
   break-after: page;
 }
+*/
 
 figcaption {
   counter-increment: fig;
